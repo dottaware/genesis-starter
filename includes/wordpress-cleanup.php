@@ -52,8 +52,8 @@ remove_action( 'wp_head', 'wp_oembed_add_host_js' );
 
 // Remove pingback url.
 function dottaware_remove_x_pingback( $headers ) {
-	unset($headers['X-Pingback']);
-	return $headers;
+    unset($headers['X-Pingback']);
+    return $headers;
 }
 add_filter( 'wp_headers', 'dottaware_remove_x_pingback' );
 

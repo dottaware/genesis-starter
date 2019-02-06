@@ -2,10 +2,10 @@
 /**
  * This file adds the archive header to the Summit themes.
  *
- * @package   SummitThemes
- * @author		Stefano Dotta
+ * @package    SummitThemes
+ * @author     Stefano Dotta
  * @since
- * @version		1.0.1
+ * @version    1.0.1
  */
 
 // Open markup for site banner after header.
@@ -17,16 +17,16 @@ function summit_site_banner_markup_open() {
 // Close markup for site banner.
 add_action('genesis_after_header', 'summit_site_banner_markup_close', 15 );
 function summit_site_banner_markup_close() {
-		echo '</div>';
+    echo '</div>';
 }
 
 // add_filter( 'genesis_attr_site-banner', 'genesis_starter_page_header_attr' );
 function genesis_starter_page_header_attr( $atts ) {
 
-	// $atts['itemref'] = 'site-banner';
-		$atts['role'] = 'banner';
+    // $atts['itemref'] = 'site-banner';
+    $atts['role'] = 'banner';
 
-		return $atts;
+    return $atts;
 
 }
 
@@ -42,32 +42,32 @@ add_action( 'genesis_before', 'dottaware_archive_header_setup' );
 
 function dottaware_archive_header_setup() {
 
-		remove_action( 'genesis_before_loop', 'genesis_do_posts_page_heading' );
-		remove_action( 'genesis_before_loop', 'genesis_do_date_archive_title' );
-		remove_action( 'genesis_before_loop', 'genesis_do_blog_template_heading' );
-		remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
-		remove_action( 'genesis_before_loop', 'genesis_do_author_title_description', 15 );
-		remove_action( 'genesis_before_loop', 'genesis_do_cpt_archive_title_description' );
- // remove_action( 'genesis_before_loop', 'genesis_do_search_title' );
+    remove_action( 'genesis_before_loop', 'genesis_do_posts_page_heading' );
+    remove_action( 'genesis_before_loop', 'genesis_do_date_archive_title' );
+    remove_action( 'genesis_before_loop', 'genesis_do_blog_template_heading' );
+    remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
+    remove_action( 'genesis_before_loop', 'genesis_do_author_title_description', 15 );
+    remove_action( 'genesis_before_loop', 'genesis_do_cpt_archive_title_description' );
+    // remove_action( 'genesis_before_loop', 'genesis_do_search_title' );
 
- // Reposition.
-		add_action( 'genesis_after_header', 'genesis_do_posts_page_heading' );
-		add_action( 'genesis_after_header', 'genesis_do_date_archive_title' );
-		// add_action( 'genesis_after_header', 'genesis_do_blog_template_heading' );
-		add_action( 'genesis_after_header', 'dottaware_do_taxonomy_title_description' );
-		// add_action( 'genesis_after_header', 'genesis_do_taxonomy_title_description' );
-		add_action( 'genesis_after_header', 'genesis_do_author_title_description' );
-		add_action( 'genesis_after_header', 'genesis_do_cpt_archive_title_description' );
+    // Reposition.
+    add_action( 'genesis_after_header', 'genesis_do_posts_page_heading' );
+    add_action( 'genesis_after_header', 'genesis_do_date_archive_title' );
+    // add_action( 'genesis_after_header', 'genesis_do_blog_template_heading' );
+    add_action( 'genesis_after_header', 'dottaware_do_taxonomy_title_description' );
+    // add_action( 'genesis_after_header', 'genesis_do_taxonomy_title_description' );
+    add_action( 'genesis_after_header', 'genesis_do_author_title_description' );
+    add_action( 'genesis_after_header', 'genesis_do_cpt_archive_title_description' );
 
-		// add_action( 'genesis_starter_page_header', 'genesis_do_posts_page_heading' );
-		// add_action( 'genesis_starter_page_header', 'genesis_do_date_archive_title' );
-		// add_action( 'genesis_starter_page_header', 'genesis_do_taxonomy_title_description' );
-		// add_action( 'genesis_starter_page_header', 'dottaware_do_taxonomy_title_description' );
-		// add_action( 'genesis_starter_page_header', 'genesis_do_author_title_description' );
-		// add_action( 'genesis_starter_page_header', 'genesis_do_cpt_archive_title_description' );
+    // add_action( 'genesis_starter_page_header', 'genesis_do_posts_page_heading' );
+    // add_action( 'genesis_starter_page_header', 'genesis_do_date_archive_title' );
+    // add_action( 'genesis_starter_page_header', 'genesis_do_taxonomy_title_description' );
+    // add_action( 'genesis_starter_page_header', 'dottaware_do_taxonomy_title_description' );
+    // add_action( 'genesis_starter_page_header', 'genesis_do_author_title_description' );
+    // add_action( 'genesis_starter_page_header', 'genesis_do_cpt_archive_title_description' );
 
-		// Remove search results and shop page titles.
-		// add_filter( 'genesis_search_title_output', '__return_false' );
+    // Remove search results and shop page titles.
+    // add_filter( 'genesis_search_title_output', '__return_false' );
 
 }
 
@@ -80,13 +80,13 @@ remove_action( 'genesis_archive_title_descriptions', 'genesis_do_archive_heading
 add_action( 'genesis_archive_title_descriptions', 'dottaware_do_archive_headings_open', 5, 2 );
 function dottaware_do_archive_headings_open( $heading = '', $intro_text = '' ) {
 
-		if ( $heading || $intro_text ) {
+    if ( $heading || $intro_text ) {
 
-				genesis_markup( array(
-					 'open'    => '<div %s><div class="wrap">',
-					 'context' => 'archive-header',
-				) );
-		}
+        genesis_markup( array(
+            'open'    => '<div %s><div class="wrap">',
+            'context' => 'archive-header',
+        ) );
+    }
 
 }
 
@@ -94,14 +94,14 @@ function dottaware_do_archive_headings_open( $heading = '', $intro_text = '' ) {
 add_action( 'genesis_archive_title_descriptions', 'dottaware_do_archive_headings_close', 15, 2 );
 function dottaware_do_archive_headings_close( $heading = '', $intro_text = '' ) {
 
-		if ( $heading || $intro_text ) {
+    if ( $heading || $intro_text ) {
 
-				genesis_markup( array(
-						'close'   => '</div></div>',
-						'context' => 'archive-header',
-				) );
+        genesis_markup( array(
+            'close'   => '</div></div>',
+            'context' => 'archive-header',
+        ) );
 
-		}
+    }
 
 }
 
@@ -121,17 +121,17 @@ function dottaware_do_archive_headings_term_link() {
 
     global $wp_query;
 
-		// this should only apply to category, tags or taxonomies archives.
-		if ( ! is_category() && ! is_tag() && ! is_tax() ) {
+    // this should only apply to category, tags or taxonomies archives.
+    if ( ! is_category() && ! is_tag() && ! is_tax() ) {
         return;
     }
 
-		// get term.
+    // get term.
     $term = is_tax() ? get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ) : $wp_query->get_queried_object();
 
-		// no term, no glory...
-		if ( ! $term || empty( $term ) ) {
-				return;
+    // no term, no glory...
+    if ( ! $term || empty( $term ) ) {
+        return;
     }
 
     if ( $term_website = get_term_meta( $term->term_id, 'term_website', true ) ) {

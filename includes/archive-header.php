@@ -144,34 +144,33 @@ function dottaware_do_archive_headings_term_link() {
 
 function dottaware_do_taxonomy_title_description() {
 
-	global $wp_query;
+    global $wp_query;
 
-	if ( ! is_category() && ! is_tag() && ! is_tax() ) {
-	return;
-	}
+    if ( ! is_category() && ! is_tag() && ! is_tax() ) {
+        return;
+    }
 
-	$term = is_tax() ? get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ) : $wp_query->get_queried_object();
+    $term = is_tax() ? get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ) : $wp_query->get_queried_object();
 
-	if ( ! $term ) {
-	return;
-	}
+    if ( ! $term || empty( $term )) {
+        return;
+    }
 
-	$heading = get_term_meta( $term->term_id, 'headline', true );
-	if ( empty( $heading ) && genesis_a11y( 'headings' ) ) {
-	$heading = $term->name;
-	}
+    $heading = get_term_meta( $term->term_id, 'headline', true );
+    if ( empty( $heading ) && genesis_a11y( 'headings' ) ) {
+        $heading = $term->name;
+    }
 
-	$heading = apply_filters( 'genesis_term_headline_output', $heading );
+    $heading = apply_filters( 'genesis_term_headline_output', $heading );
 
-	$intro_text = get_term_meta( $term->term_id, 'intro_text', true );
-	if ( empty( $intro_text ) ) {
-	$intro_text = $term->description;
-	}
+    $intro_text = get_term_meta( $term->term_id, 'intro_text', true );
+    if ( empty( $intro_text ) ) {
+        $intro_text = $term->description;
+    }
 
-	$intro_text = apply_filters( 'genesis_term_intro_text_output', $intro_text );
+    $intro_text = apply_filters( 'genesis_term_intro_text_output', $intro_text );
 
-
-	// This action is documented in lib/structure/archive.php.
-	do_action( 'genesis_archive_title_descriptions', $heading, $intro_text, 'taxonomy-archive-description' );
+    // This action is documented in lib/structure/archive.php.
+    do_action( 'genesis_archive_title_descriptions', $heading, $intro_text, 'taxonomy-archive-description' );
 
 }

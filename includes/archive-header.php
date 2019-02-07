@@ -5,18 +5,26 @@
  * @package    SummitThemes
  * @author     Stefano Dotta
  * @since
- * @version    1.0.1
+ * @version    1.0.2
+ */
+
+/**
+ * Changelog
+ *
+ * 2019-02-07 - 1.0.2
+ * added rewrite of "genesis_do_search_title"
+ *
  */
 
 // Open markup for site banner after header.
-add_action('genesis_after_header', 'summit_site_banner_markup_open', 5 );
-function summit_site_banner_markup_open() {
+add_action('genesis_after_header', 'dottaware_site_banner_markup_open', 5 );
+function dottaware_site_banner_markup_open() {
     printf( '<div %s>', genesis_attr( 'site-banner' ) );
 }
 
 // Close markup for site banner.
-add_action('genesis_after_header', 'summit_site_banner_markup_close', 15 );
-function summit_site_banner_markup_close() {
+add_action('genesis_after_header', 'dottaware_site_banner_markup_close', 15 );
+function dottaware_site_banner_markup_close() {
     echo '</div>';
 }
 
@@ -48,7 +56,7 @@ function dottaware_archive_header_setup() {
     remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
     remove_action( 'genesis_before_loop', 'genesis_do_author_title_description', 15 );
     remove_action( 'genesis_before_loop', 'genesis_do_cpt_archive_title_description' );
-    // remove_action( 'genesis_before_loop', 'genesis_do_search_title' );
+    remove_action( 'genesis_before_loop', 'genesis_do_search_title' );
 
     // Reposition.
     add_action( 'genesis_after_header', 'genesis_do_posts_page_heading' );
@@ -58,6 +66,7 @@ function dottaware_archive_header_setup() {
     // add_action( 'genesis_after_header', 'genesis_do_taxonomy_title_description' );
     add_action( 'genesis_after_header', 'genesis_do_author_title_description' );
     add_action( 'genesis_after_header', 'genesis_do_cpt_archive_title_description' );
+	add_action( 'genesis_after_header', 'dottaware_do_search_title' );
 
     // add_action( 'genesis_starter_page_header', 'genesis_do_posts_page_heading' );
     // add_action( 'genesis_starter_page_header', 'genesis_do_date_archive_title' );
@@ -173,4 +182,14 @@ function dottaware_do_taxonomy_title_description() {
     // This action is documented in lib/structure/archive.php.
     do_action( 'genesis_archive_title_descriptions', $heading, $intro_text, 'taxonomy-archive-description' );
 
+}
+
+
+function dottaware_do_search_title() {
+
+    $title = sprintf( '<h1 class="archive-title">%s %s</h1>', apply_filters( 'genesis_search_title_text', __( 'Texte recherché : ', 'genesis' ) ), get_search_query() );
+
+	$heading = apply_filters( 'genesis_search_title_output', $title );
+	
+   do_action( 'genesis_archive_title_descriptions', $heading, '', 'search-archive-description' );
 }

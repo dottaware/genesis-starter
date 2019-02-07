@@ -191,5 +191,6 @@ function dottaware_do_search_title() {
 
     $heading = apply_filters( 'genesis_search_title_output', $heading );
 
+    // This action is documented in lib/structure/archive.php.
     do_action( 'genesis_archive_title_descriptions', $heading, '', 'search-archive-description' );
 }

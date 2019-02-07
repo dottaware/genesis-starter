@@ -184,7 +184,7 @@ function dottaware_do_taxonomy_title_description() {
 
 }
 
-
+// Add custom heading to search result archive pages.
 function dottaware_do_search_title() {
 
     $heading = sprintf( '<h1 class="archive-title">%s %s</h1>', apply_filters( 'genesis_search_title_text', __( 'Texte recherché : ', 'genesis' ) ), get_search_query() );

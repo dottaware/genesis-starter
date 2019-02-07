@@ -189,7 +189,7 @@ function dottaware_do_search_title() {
 
     $heading = sprintf( '<h1 class="archive-title">%s %s</h1>', apply_filters( 'genesis_search_title_text', __( 'Texte recherché : ', 'genesis' ) ), get_search_query() );
 
-	$heading = apply_filters( 'genesis_search_title_output', $heading );
+    $heading = apply_filters( 'genesis_search_title_output', $heading );
 
-   do_action( 'genesis_archive_title_descriptions', $heading, '', 'search-archive-description' );
+    do_action( 'genesis_archive_title_descriptions', $heading, '', 'search-archive-description' );
 }

@@ -5,11 +5,14 @@
  * @package    SummitThemes
  * @author     Stefano Dotta
  * @since
- * @version    1.0.2
+ * @version    1.0.3
  */
 
 /**
  * Changelog
+ *
+ * 2019-02-08 - 1.0.3
+ * added condition "is_search()" to rewrite of "genesis_do_search_title"
  *
  * 2019-02-07 - 1.0.2
  * added rewrite of "genesis_do_search_title"
@@ -66,7 +69,7 @@ function dottaware_archive_header_setup() {
     // add_action( 'genesis_after_header', 'genesis_do_taxonomy_title_description' );
     add_action( 'genesis_after_header', 'genesis_do_author_title_description' );
     add_action( 'genesis_after_header', 'genesis_do_cpt_archive_title_description' );
-	add_action( 'genesis_after_header', 'dottaware_do_search_title' );
+    add_action( 'genesis_after_header', 'dottaware_do_search_title' );
 
     // add_action( 'genesis_starter_page_header', 'genesis_do_posts_page_heading' );
     // add_action( 'genesis_starter_page_header', 'genesis_do_date_archive_title' );

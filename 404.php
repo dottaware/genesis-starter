@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Framework.
+ * Summit Theme 404 page.
  *
+ * 
  *
- *
- * @package
- * @author
- * @license
- * @link
+ * @package  Summit Theme
+ * @author   Stefano Dotta
+ * @license  GPL-2.0+
+ * @link     none
  */
 
 // Remove default loop.

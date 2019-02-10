@@ -3,12 +3,11 @@
 /**
  * Register theme support features for Summit Themes.
  *
- * @package		SummitThemes
- * @author		Stefano Dotta
+ * @package    SummitThemes
+ * @author     Stefano Dotta
  * @since
- * @version		1.0.1
+ * @version    1.0.1
  */
-
 
 /* WordPress
 ----------------------------------------------------------------- */
@@ -44,10 +43,10 @@ add_theme_support( 'genesis-responsive-viewport' );
 
 // Add support for additional color style options.
 add_theme_support( 'genesis-style-selector', array(
-	'summit-green'   => __( 'Summit Green', 'summit' ),
-	'summit-orange'  => __( 'Summit Orange', 'summit' ),
-	'summit-blue'    => __( 'Summit Blue', 'summit' ),
-	'summit-yellow'  => __( 'Summit Yellow', 'summit' ),
+    'summit-green'   => __( 'Summit Green', 'summit' ),
+    'summit-orange'  => __( 'Summit Orange', 'summit' ),
+    'summit-blue'    => __( 'Summit Blue', 'summit' ),
+    'summit-yellow'  => __( 'Summit Yellow', 'summit' ),
 ) );
 
 // Add support for after entry widget.

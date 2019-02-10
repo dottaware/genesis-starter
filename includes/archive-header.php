@@ -73,6 +73,7 @@ function dottaware_archive_header_setup() {
     add_action( 'genesis_after_header', 'genesis_do_author_title_description' );
     add_action( 'genesis_after_header', 'genesis_do_cpt_archive_title_description' );
     add_action( 'genesis_after_header', 'dottaware_do_search_title' );
+    add_action( 'genesis_after_header', 'dottaware_do_404_title' );
 
     // add_action( 'genesis_starter_page_header', 'genesis_do_posts_page_heading' );
     // add_action( 'genesis_starter_page_header', 'genesis_do_date_archive_title' );

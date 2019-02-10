@@ -46,10 +46,10 @@ function summit_archive_entry_image() {
 remove_action( 'genesis_loop_else', 'genesis_do_noposts' );
 
 // Add our own action to be fired when there are no posts to show.
-add_action( 'genesis_loop_else', 'dottaware_genesis_do_noposts' );
+add_action( 'genesis_loop_else', 'dottaware_do_noposts' );
 
 
-function dottaware_genesis_do_noposts() {
+function dottaware_do_noposts() {
 
   	genesis_markup( array(
 		'open'    => '<article class="entry">',

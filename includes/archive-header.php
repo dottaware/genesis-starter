@@ -11,6 +11,9 @@
 /**
  * Changelog
  *
+ * 2019-02-10 - 1.0.4
+ * added 404 archive title entry.
+ *
  * 2019-02-08 - 1.0.3
  * added condition "is_search()" to rewrite of "genesis_do_search_title"
  *
@@ -201,5 +204,20 @@ function dottaware_do_search_title() {
 
     // This action is documented in lib/structure/archive.php.
     do_action( 'genesis_archive_title_descriptions', $heading, '', 'search-archive-description' );
+
+}
+
+// Add custom heading to 404 page.
+function dottaware_do_404_title() {
+
+    // Bail out early if this is not a 404 error.
+    if ( ! is_404() ) {
+        return;
+    }
+
+    $heading = sprintf( '<h1 class="archive-title">%s</h1>', apply_filters( 'genesis_404_entry_title', __( 'Erreur 404, page non trouvée', 'genesis' ) ) );
+
+    // This action is documented in lib/structure/archive.php.
+    do_action( 'genesis_archive_title_descriptions', $heading, '', '404-archive-description' );
 
 }

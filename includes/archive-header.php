@@ -163,7 +163,7 @@ function dottaware_do_archive_headings_term_link() {
             'close'   => '</div>',
             'content' => $term_link_output,
             'context' => 'archive-link',
-            ) );
+        ) );
     }
 
 }

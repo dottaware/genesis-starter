@@ -49,8 +49,8 @@ add_action( 'genesis_before', 'dottaware_archive_header_setup' );
 /**
  * Set up the archive banner.
  *
- * Removes and repositions the title on all possible types of pages. Wrapped
- * up into one function so it can easily be unhooked from genesis_before.
+ * Removes and repositions the title on all possible types of pages.
+ * Wrapped up into one function so it can easily be unhooked from genesis_before.
  *
  */
 

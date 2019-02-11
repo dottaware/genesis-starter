@@ -5,7 +5,7 @@
  * @package    SummitThemes
  * @author     Stefano Dotta
  * @since
- * @version    1.0.3
+ * @version    1.0.4
  */
 
 /**

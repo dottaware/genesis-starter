@@ -151,20 +151,20 @@ function dottaware_do_archive_headings_term_link() {
     }
 
     if ( $term_website = get_term_meta( $term->term_id, 'term_website', true ) ) {
-	  	$term_link_name = get_term_meta( $term->term_id, 'term_link_name', true );
+        $term_link_name = get_term_meta( $term->term_id, 'term_link_name', true );
         $term_link_name = $term_link_name ? $term_link_name : esc_url( $term_website );
-	  	$term_website = sprintf( '<em><a href="%s" target="_blank" itemprop="url">%s</a></em>', esc_url( $term_website ), $term_link_name );
-	  	$term_link_output = __( 'Site web de référence : ', 'dottaware' ) . $term_website;
+        $term_website = sprintf( '<em><a href="%s" target="_blank" itemprop="url">%s</a></em>', esc_url( $term_website ), $term_link_name );
+        $term_link_output = __( 'Site web de référence : ', 'dottaware' ) . $term_website;
     }
 
-  	if ( $term_website && $term_link_output ) {
-  		genesis_markup( array(
-			'open'    => '<div %s>',
-	  		'close'   => '</div>',
-	  		'content' => $term_link_output,
-	  		'context' => 'archive-link',
-		) );
-	}
+    if ( $term_website && $term_link_output ) {
+        genesis_markup( array(
+            'open'    => '<div %s>',
+            'close'   => '</div>',
+            'content' => $term_link_output,
+            'context' => 'archive-link',
+            ) );
+    }
 
 }
 

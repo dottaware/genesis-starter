@@ -10,7 +10,7 @@
  * @author		Stefano Dotta
  * @since
  * @version		1.0.1
-**/
+ */
 
 // remove really simple discovery link.
 remove_action( 'wp_head', 'rsd_link' );

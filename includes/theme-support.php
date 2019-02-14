@@ -71,3 +71,6 @@ remove_theme_support( 'genesis-customizer-seo-settings' );
 
 // Remove theme support for Genesis layouts for posts and pages.
 remove_theme_support( 'genesis-inpost-layouts' );
+
+// Remove theme support for Genesis layouts for Archives.
+remove_theme_support( 'genesis-archive-layouts' );

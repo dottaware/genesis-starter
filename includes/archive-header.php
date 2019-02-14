@@ -12,7 +12,7 @@
  * Changelog
  *
  * 2019-02-10 - 1.0.4
- * added 404 archive title entry.
+ * added condition "is_404()" to function "dottaware_do_404_title()" for archive title entry.
  *
  * 2019-02-08 - 1.0.3
  * added condition "is_search()" to rewrite of "genesis_do_search_title"

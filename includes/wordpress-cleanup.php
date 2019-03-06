@@ -6,21 +6,20 @@
  * last update: 2019-01-28
  * - remove emojis
  *
- * @package		SummitThemes
- * @author		Stefano Dotta
+ * @package     SummitThemes
+ * @author      Stefano Dotta
  * @since
- * @version		1.0.2
+ * @version     1.0.2
  */
 
 /**
  *
  *
  *
- *	1.0.2 - 2019-06-03
- *	add disable emoji's dns prefech
+ *  1.0.2 - 2019-06-03
+ *  add disable emoji's dns prefech
  *
  */
- 
  
 // remove really simple discovery link.
 remove_action( 'wp_head', 'rsd_link' );
@@ -73,8 +72,6 @@ add_filter( 'pre_update_option_enable_xmlrpc', '__return_false' );
 add_filter( 'pre_option_enable_xmlrpc', '__return_zero' );
 add_filter( 'pings_open', '__return_false', 10, 2 );
 
-
-add_action( 'init', 'dottaware_disable_emojis' );
 /**
  * Disable the emoji's
  *
@@ -89,6 +86,7 @@ function dottaware_disable_emojis() {
     remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
     remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
 }
+add_action( 'init', 'dottaware_disable_emojis' );
 
 /**
  * Remove emoji's dns prefetch.
@@ -96,4 +94,3 @@ function dottaware_disable_emojis() {
  * @link https://wordpress.stackexchange.com/questions/185577/disable-emojicons-introduced-with-wp-4-2 
  */
 add_filter( 'emoji_svg_url', '__return_false' );
-

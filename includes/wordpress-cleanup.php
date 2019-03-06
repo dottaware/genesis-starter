@@ -9,9 +9,19 @@
  * @package		SummitThemes
  * @author		Stefano Dotta
  * @since
- * @version		1.0.1
+ * @version		1.0.2
  */
 
+/**
+ *
+ *
+ *
+ *	1.0.2 - 2019-06-03
+ *	add disable emoji's dns prefech
+ *
+ */
+ 
+ 
 // remove really simple discovery link.
 remove_action( 'wp_head', 'rsd_link' );
 
@@ -79,4 +89,11 @@ function dottaware_disable_emojis() {
     remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
     remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
 }
+
+/**
+ * Remove emoji's dns prefetch.
+ *
+ * @link https://wordpress.stackexchange.com/questions/185577/disable-emojicons-introduced-with-wp-4-2 
+ */
+add_filter( 'emoji_svg_url', '__return_false' );
 
